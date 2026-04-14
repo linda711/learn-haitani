@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real AI, shown at the altitude you lead from | Haitani.org</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script src="https://fast.wistia.com/player.js" async></script>
+    <script src="https://fast.wistia.com/embed/fj9afo373v.js" async type="module"></script>
+    <script src="https://fast.wistia.com/embed/1inwhdrqwj.js" async type="module"></script>
+
+    <style>
+        wistia-player[media-id='fj9afo373v']:not(:defined) {
+            background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/fj9afo373v/swatch');
+            display: block; filter: blur(5px); padding-top: 56.25%;
+        }
+        wistia-player[media-id='1inwhdrqwj']:not(:defined) {
+            background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/1inwhdrqwj/swatch');
+            display: block; filter: blur(5px); padding-top: 56.25%;
+        }
+    </style>
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --cream:      #F7F3EC;
+            --cream-dark:  #EDE8DF;
+            --orange:     #D4895A;
+            --orange-light: #E0A57A;
+            --teal:       #6B9090;
+            --dark-teal:  #2D4F4A;
+            --sage:       #A8C4B8;
+            --sage-light: #C2D6CC;
+            --text-dark:  #2C2926;
+            --text-mid:   #3E3A36;
+            --text-light: #6B6560;
+            --divider:    #DDD8CE;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--text-dark);
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ─── HERO ─────────────────────────────────────────────── */
+
+        .site-header {
+            position: relative;
+            overflow: hidden;
+            min-height: 680px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #3A6B64 0%, #2D4F4A 40%, #234039 100%);
+        }
+
+        .header-geo {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .header-inner {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 100px 48px 80px;
+            max-width: 860px;
+            width: 100%;
+        }
+
+        .series-eyebrow {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: rgba(183, 211, 205, 0.65);
+            margin-bottom: 40px;
+        }
+
+        .series-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(36px, 5.5vw, 64px);
+            font-weight: 700;
+            line-height: 1.12;
+            color: var(--cream);
+            margin-bottom: 28px;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(15px, 1.6vw, 17px);
+            font-weight: 300;
+            line-height: 1.8;
+            color: rgba(237, 232, 223, 0.82);
+            max-width: 620px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-cta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--orange-light);
+            margin-bottom: 16px;
+            letter-spacing: 0.02em;
+        }
+
+        .email-form {
+            display: flex;
+            gap: 0;
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .email-form input[type="email"] {
+            flex: 1;
+            padding: 14px 18px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--text-dark);
+            background: rgba(255,255,255,0.95);
+            border: 2px solid transparent;
+            border-radius: 3px 0 0 3px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .email-form input[type="email"]::placeholder {
+            color: #9B968F;
+        }
+
+        .email-form input[type="email"]:focus {
+            border-color: var(--orange);
+        }
+
+        .email-form button {
+            padding: 14px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.10em;
+            text-transform: uppercase;
+            color: white;
+            background-color: var(--orange);
+            border: none;
+            border-radius: 0 3px 3px 0;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background-color 0.2s;
+        }
+
+        .email-form button:hover {
+            background-color: #C47A4E;
+        }
+
+        /* ─── WHY THIS SERIES ──────────────────────────────────── */
+
+        .why-section {
+            background-color: var(--cream);
+            padding: 88px 40px;
+        }
+
+        .why-inner {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10.5px;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 28px;
+            display: block;
+        }
+
+        .why-inner p {
+            font-size: 17px;
+            font-weight: 300;
+            line-height: 1.9;
+            color: var(--text-mid);
+            margin-bottom: 20px;
+        }
+
+        .why-inner p:last-child { margin-bottom: 0; }
+
+        .why-inner strong {
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .why-inner em {
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+        }
+
+        /* ─── THE SERIES SECTION ───────────────────────────────── */
+
+        .series-section-header {
+            text-align: center;
+            padding: 0 40px 20px;
+            background-color: var(--cream);
+        }
+
+        .series-section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(28px, 3.5vw, 40px);
+            font-weight: 600;
+            color: var(--dark-teal);
+            margin-bottom: 4px;
+        }
+
+        .series-section-rule {
+            width: 48px;
+            height: 2px;
+            background-color: var(--orange);
+            margin: 0 auto;
+            opacity: 0.5;
+        }
+
+        /* ─── VIDEOS ───────────────────────────────────────────── */
+
+        .videos-section {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 40px 40px 48px;
+        }
+
+        .video-block {
+            display: grid;
+            grid-template-columns: 36% 1fr;
+            gap: 52px;
+            align-items: start;
+            margin-bottom: 0;
+            padding: 48px 0;
+        }
+
+        .video-block + .video-block {
+            border-top: 1px solid var(--divider);
+        }
+
+        .video-left {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-embed {
+            width: 100%;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 6px 40px rgba(44, 41, 38, 0.14);
+        }
+
+        .video-embed wistia-player {
+            display: block;
+            width: 100%;
+        }
+
+        .video-meta {
+            padding-top: 0;
+        }
+
+        .video-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10.5px;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .video-status {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.10em;
+            text-transform: uppercase;
+            padding: 3px 10px;
+            border-radius: 2px;
+            margin-bottom: 12px;
+        }
+
+        .video-status.available {
+            background-color: rgba(107, 144, 144, 0.15);
+            color: var(--dark-teal);
+        }
+
+        .video-status.coming-soon {
+            background-color: rgba(212, 137, 90, 0.12);
+            color: var(--orange);
+        }
+
+        .video-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(20px, 2vw, 26px);
+            font-weight: 600;
+            color: var(--orange);
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .video-rule {
+            width: 32px;
+            height: 1px;
+            background-color: var(--orange);
+            opacity: 0.35;
+            margin-bottom: 18px;
+        }
+
+        .video-description {
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.75;
+            color: var(--text-mid);
+        }
+
+        .video-description p { margin-bottom: 14px; }
+        .video-description p:last-child { margin-bottom: 0; }
+
+        .video-description em {
+            font-style: italic;
+            font-family: 'Playfair Display', serif;
+            font-size: 16.5px;
+        }
+
+        .video-cta {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 28px;
+            font-family: 'Inter', sans-serif;
+            font-size: 11.5px;
+            font-weight: 600;
+            letter-spacing: 0.10em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: all 0.2s;
+        }
+
+        .video-cta.watch {
+            background-color: var(--dark-teal);
+            color: var(--cream);
+        }
+
+        .video-cta.watch:hover {
+            background-color: #3A6B64;
+        }
+
+        .video-cta.notify {
+            background-color: transparent;
+            color: var(--orange);
+            border: 1.5px solid var(--orange);
+        }
+
+        .video-cta.notify:hover {
+            background-color: rgba(212, 137, 90, 0.08);
+        }
+
+        /* ─── VIDEO 3 COMING SOON ──────────────────────────────── */
+
+        .video-placeholder {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 4px;
+            background: linear-gradient(145deg, #D8D2C8 0%, #C8C2B8 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .video-placeholder svg {
+            opacity: 0.35;
+        }
+
+        .video-placeholder span {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-light);
+            opacity: 0.6;
+        }
+
+        /* ─── ABOUT ────────────────────────────────────────────── */
+
+        .about-section {
+            background-color: #EBE6DC;
+            padding: 88px 40px;
+        }
+
+        .about-inner {
+            max-width: 780px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 52px;
+            align-items: start;
+        }
+
+        .about-photo-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .about-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            box-shadow: 0 0 0 4px var(--cream), 0 0 0 6px rgba(107, 144, 144, 0.25);
+        }
+
+        .about-name-badge {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            color: var(--teal);
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 1.9;
+            color: var(--text-mid);
+            margin-bottom: 16px;
+        }
+
+        .about-content p:last-child { margin-bottom: 0; }
+
+        /* ─── CLOSING CTA ──────────────────────────────────────── */
+
+        .cta-section {
+            background: linear-gradient(135deg, #3A6B64 0%, #2D4F4A 40%, #234039 100%);
+            padding: 88px 40px;
+            text-align: center;
+        }
+
+        .cta-inner {
+            max-width: 580px;
+            margin: 0 auto;
+        }
+
+        .cta-inner p {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(18px, 2.2vw, 24px);
+            font-weight: 400;
+            color: var(--cream);
+            line-height: 1.65;
+            opacity: 0.92;
+            margin-bottom: 10px;
+        }
+
+        .cta-sub {
+            font-family: 'Inter', sans-serif !important;
+            font-size: 14px !important;
+            font-weight: 300 !important;
+            color: rgba(183, 211, 205, 0.65) !important;
+            margin-bottom: 36px !important;
+            opacity: 1 !important;
+        }
+
+        .cta-form-wrap {
+            margin-top: 32px;
+        }
+
+        /* ─── FOOTER ───────────────────────────────────────────── */
+
+        .site-footer {
+            border-top: 1px solid var(--divider);
+            background-color: var(--cream);
+            padding: 44px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-logomark {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 4px;
+        }
+
+        .ai-badge {
+            width: 36px;
+            height: 36px;
+            background-color: var(--dark-teal);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-domain {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--text-mid);
+            letter-spacing: 0.02em;
+        }
+
+        .footer-tagline {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            font-weight: 300;
+            color: var(--text-mid);
+            opacity: 0.55;
+        }
+
+        /* ─── RESPONSIVE ───────────────────────────────────────── */
+
+        @media (max-width: 860px) {
+            .video-block {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .video-meta { padding-top: 0; }
+        }
+
+        @media (max-width: 720px) {
+            .about-inner {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .about-photo-wrap {
+                flex-direction: row;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .about-photo {
+                width: 120px;
+                height: 120px;
+            }
+
+            .about-name-badge { text-align: left; }
+        }
+
+        @media (max-width: 600px) {
+            .site-header { min-height: 560px; }
+            .header-inner { padding: 72px 24px 60px; }
+
+            .email-form {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .email-form input[type="email"] {
+                border-radius: 3px;
+            }
+
+            .email-form button {
+                border-radius: 3px;
+                padding: 14px;
+            }
+
+            .why-section,
+            .about-section,
+            .cta-section,
+            .videos-section {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .series-section-header {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════ -->
+<header class="site-header">
+
+    <svg class="header-geo" viewBox="0 0 1440 700" preserveAspectRatio="xMidYMid slice"
+         xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <polygon points="0,0 600,0 340,700 0,700"         fill="#4A7A74" opacity="0.40"/>
+        <polygon points="0,0 320,0 0,300"                 fill="#5E9490" opacity="0.50"/>
+        <polygon points="250,0 820,0 560,700"              fill="#608C80" opacity="0.18"/>
+        <polygon points="1000,0 1440,0 1440,700 900,700"   fill="#234039" opacity="0.45"/>
+        <polygon points="450,0 1050,0 780,700 160,700"     fill="#3D6B65" opacity="0.25"/>
+        <polygon points="880,0 1440,0 1440,280"            fill="#6A9E95" opacity="0.22"/>
+        <polygon points="0,180 160,0 0,0"                 fill="#7AB0A8" opacity="0.30"/>
+        <polygon points="1200,700 1440,700 1440,400"       fill="#5E9490" opacity="0.15"/>
+    </svg>
+
+    <div class="header-inner">
+        <p class="series-eyebrow">A video series for heads of K&ndash;12 private schools</p>
+        <h1 class="series-title">Real AI, shown at the altitude you lead from.</h1>
+        <p class="hero-subtitle">A short video series for Heads of K&ndash;12 private schools &mdash; each one a working demonstration of AI applied to the leadership work that actually sits on your desk: strategic plans, board prep, the decisions no one else can make.</p>
+        <p class="hero-cta-label">Enter your email and I&rsquo;ll send each new video as it&rsquo;s released.</p>
+        <form class="email-form" action="https://haitani.us14.list-manage.com/subscribe/post?u=83710dd64d29b02cbc85113e6&amp;id=9691c6cf12&amp;f_id=0037b5e5f0" method="post" target="_blank" novalidate>
+            <input type="email" name="EMAIL" placeholder="you@yourschool.org" aria-label="Email address" required>
+            <button type="submit">Send me the series</button>
+            <!-- MailChimp bot protection — do not remove -->
+            <div style="position:absolute;left:-5000px;" aria-hidden="true">
+                <input type="text" name="b_83710dd64d29b02cbc85113e6_9691c6cf12" tabindex="-1" value="">
+            </div>
+        </form>
+    </div>
+
+</header>
+
+<!-- ═══════════════════════════════════════════
+     WHY THIS SERIES
+═══════════════════════════════════════════════ -->
+<section class="why-section">
+    <div class="why-inner">
+        <span class="section-label">Why This Series</span>
+        <p>There&rsquo;s a lot being written about AI in schools right now, and most of it is aimed at the classroom &mdash; at teachers, curriculum, and student use. That work matters, and I&rsquo;m glad it&rsquo;s being done.</p>
+        <p><strong>This series serves a different audience. The one sitting in your seat.</strong></p>
+        <p>The leadership altitude is its own thing. Strategic plans that need to stay alive between board meetings. Enrollment trends that need a sharper read than a dashboard can give. Board packets that need to become decision tools. Hard conversations that need the right framing before you walk into the room.</p>
+        <p>These are the things almost no one is showing you AI doing &mdash; not because the capability isn&rsquo;t here, but because very few people talking about AI in schools have also sat in your chair. This series closes that gap. Each video is a real demonstration on real leadership work, built without code and without technical skill.</p>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     THE SERIES
+═══════════════════════════════════════════════ -->
+<div class="series-section-header">
+    <h2>The Series</h2>
+    <div class="series-section-rule"></div>
+</div>
+
+<main class="videos-section">
+
+    <!-- Video 1 ─────────────────────────────── -->
+    <div class="video-block">
+        <div class="video-left">
+            <span class="video-label">Video 1</span>
+            <span class="video-status available">Available now</span>
+            <h2 class="video-title">The Leadership Layer</h2>
+            <div class="video-embed">
+                <wistia-player media-id="fj9afo373v" aspect="1.7777777777777777"></wistia-player>
+            </div>
+        </div>
+
+        <div class="video-meta">
+            <div class="video-rule"></div>
+            <div class="video-description">
+                <p>If there&rsquo;s one thing I&rsquo;d recommend every head of school do with AI right now, it&rsquo;s build a Leadership Layer.</p>
+                <p>A Leadership Layer is a private, persistent collection of your own files &mdash; your plan, your priorities, your thinking, your voice &mdash; that AI reads at the start of every session. The demonstration uses a fictional K&ndash;8 school with a full strategic plan. You see AI read from the folder and handle a real leadership task. Then you see it write back into the folder.</p>
+                <p>The shift is from AI as a chat window you re-introduce yourself to every Monday, to AI as a layer you build once and lead from.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video 2 ─────────────────────────────── -->
+    <div class="video-block">
+        <div class="video-left">
+            <span class="video-label">Video 2</span>
+            <span class="video-status available">Available now</span>
+            <h2 class="video-title">From Board Report to Decision Tool</h2>
+            <div class="video-embed">
+                <wistia-player media-id="1inwhdrqwj" aspect="1.7777777777777777"></wistia-player>
+            </div>
+        </div>
+
+        <div class="video-meta">
+            <div class="video-rule"></div>
+            <div class="video-description">
+                <p>Every head has sat with a board report late at night wanting to think through it differently &mdash; to run the numbers another way, to see what a weaker enrollment year would do, to play out plan B and plan C before bringing anything to the team.</p>
+                <p>In this video, I take a standard board-level report and show how AI turns it into the thinking tool the head actually wants in those quiet moments &mdash; scenarios modeled, assumptions made visible, plan B and plan C held up beside plan A. The report goes from showing you what happened, to helping you think through what might come next.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video 3 — Coming Soon ──────────────── -->
+    <div class="video-block">
+        <div class="video-left">
+            <span class="video-label">Video Three &nbsp;&middot;&nbsp; <span class="coming-soon">Coming Soon</span></span>
+            <h2 class="video-title">Building Tools Just for You</h2>
+            <div class="video-embed video-coming-soon">
+                <img src="./video3-thumbnail.jpg" alt="Building Tools Just for You — Coming Soon" style="width:100%; display:block; border-radius:3px; opacity:0.82;">
+            </div>
+        </div>
+
+        <div class="video-meta">
+            <div class="video-rule"></div>
+            <div class="video-description">
+                <p>Vibe coding is the phrase of the moment, and for good reason. It&rsquo;s the ability to describe a tool you wish existed in plain language, and have AI build a working version of it &mdash; no code, no developer, no vendor.</p>
+                <p>In the third video, I use vibe coding to build one small, specific tool for a real leadership problem, live. The kind of tool every head wishes existed but no vendor will ever build.</p>
+            </div>
+            <a href="#notify" class="video-cta notify">Notify me when this is live</a>
+        </div>
+    </div>
+
+</main>
+
+<!-- ═══════════════════════════════════════════
+     ABOUT
+═══════════════════════════════════════════════ -->
+<section class="about-section">
+    <div class="about-inner">
+
+        <div class="about-photo-wrap">
+            <img
+                src="./linda-haitani.jpg"
+                alt="Linda Haitani"
+                class="about-photo"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            >
+            <div class="about-photo-placeholder" style="display:none;">
+                <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="26" cy="20" r="10" fill="#8FAEAA" opacity="0.6"/>
+                    <ellipse cx="26" cy="44" rx="18" ry="10" fill="#8FAEAA" opacity="0.4"/>
+                </svg>
+            </div>
+            <p class="about-name-badge">Linda Haitani</p>
+        </div>
+
+        <div class="about-content">
+            <span class="section-label">About</span>
+            <p>My work has focused on helping private school leaders navigate complex operational and leadership decisions, particularly during periods of change.</p>
+            <p>I have spent years working across private schools, with deep experience in enrollment, finance, operations, governance, and mission-critical systems.</p>
+            <p>I bring this orientation and experience to the questions of AI.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CLOSING CTA
+═══════════════════════════════════════════════ -->
+<section class="cta-section">
+    <div class="cta-inner">
+        <p>These videos are my way of showing you what&rsquo;s possible, at the altitude you lead from. I&rsquo;ll be making more of them through the spring.</p>
+        <p class="cta-sub">If you&rsquo;d like them as they come out, leave your email below &mdash; I&rsquo;ll send each one directly.</p>
+        <div class="cta-form-wrap">
+            <form class="email-form" action="https://haitani.us14.list-manage.com/subscribe/post?u=83710dd64d29b02cbc85113e6&amp;id=9691c6cf12&amp;f_id=0037b5e5f0" method="post" target="_blank" novalidate>
+                <input type="email" name="EMAIL" placeholder="you@yourschool.org" aria-label="Email address" required>
+                <button type="submit">Send me the series</button>
+                    <!-- MailChimp bot protection — do not remove -->
+                <div style="position:absolute;left:-5000px;" aria-hidden="true">
+                    <input type="text" name="b_83710dd64d29b02cbc85113e6_9691c6cf12" tabindex="-1" value="">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════ -->
+<footer class="site-footer">
+    <div class="footer-logomark">
+        <div class="ai-badge">
+            <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.75" y="0.75" width="20.5" height="14.5" rx="3.25"
+                      stroke="#F7F3EC" stroke-width="1.5" fill="none"/>
+                <text x="11" y="11.5" font-family="Inter, sans-serif" font-size="7.5"
+                      font-weight="600" fill="#F7F3EC" text-anchor="middle">AI</text>
+            </svg>
+        </div>
+        <span class="footer-domain">Haitani.org</span>
+    </div>
+    <p class="footer-tagline">AI strategy for school leaders &middot; Linda Haitani</p>
+</footer>
+
+</body>
+</html>
