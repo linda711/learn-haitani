@@ -795,21 +795,30 @@
 
 
 <script>
-// MailChimp JSONP — handles new subscribers, already-subscribed, and errors
-// Redirects to haitani.org in all cases so user never sees MailChimp's pages
-window.mcCallback = function(data) {
-    window.location.href = 'https://haitani.org';
-};
-
 function mcSubmit(formEl) {
     formEl.addEventListener('submit', function(e) {
         e.preventDefault();
         var email = this.querySelector('input[name="EMAIL"]').value;
         if (!email) return;
-        var url = this.action + '&EMAIL=' + encodeURIComponent(email) + '&LEADSOURCE=video-series&c=mcCallback';
-        var script = document.createElement('script');
-        script.src = url;
-        document.body.appendChild(script);
+
+        var btn = this.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        btn.textContent = 'Sending…';
+
+        fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email, tag: 'video-series' }),
+        })
+        .then(function(res) { return res.json(); })
+        .then(function() {
+            window.location.href = 'https://haitani.org';
+        })
+        .catch(function() {
+            btn.disabled = false;
+            btn.textContent = 'Send me the series';
+            alert('Something went wrong — please try again.');
+        });
     });
 }
 
