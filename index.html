@@ -492,6 +492,33 @@
             margin-top: 32px;
         }
 
+        /* ─── THANK YOU STATE ──────────────────────────────────── */
+
+        .mc-thankyou {
+            text-align: center;
+            padding: 12px 0;
+        }
+
+        .mc-thankyou-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--cream);
+            margin-bottom: 8px;
+        }
+
+        .mc-thankyou-sub {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 300;
+            color: rgba(183, 211, 205, 0.75);
+        }
+
+        /* CTA section thank you inherits cream; hero section needs same treatment */
+        .site-header .mc-thankyou-title {
+            color: var(--cream);
+        }
+
         /* ─── FOOTER ───────────────────────────────────────────── */
 
         .site-footer {
@@ -795,6 +822,16 @@
 
 
 <script>
+function showThankYou(formEl) {
+    var wrapper = formEl.parentElement;
+    wrapper.innerHTML = [
+        '<div class="mc-thankyou">',
+        '  <p class="mc-thankyou-title">You\'re on the list.</p>',
+        '  <p class="mc-thankyou-sub">I\'ll send each video directly to your inbox as it\'s released.</p>',
+        '</div>'
+    ].join('');
+}
+
 function mcSubmit(formEl) {
     formEl.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -812,7 +849,7 @@ function mcSubmit(formEl) {
         })
         .then(function(res) { return res.json(); })
         .then(function() {
-            window.location.href = 'https://haitani.org';
+            showThankYou(formEl);
         })
         .catch(function() {
             btn.disabled = false;
