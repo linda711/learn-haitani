@@ -806,7 +806,7 @@ function mcSubmit(formEl) {
         e.preventDefault();
         var email = this.querySelector('input[name="EMAIL"]').value;
         if (!email) return;
-        var url = this.action + '&EMAIL=' + encodeURIComponent(email) + '&c=mcCallback';
+        var url = this.action + '&EMAIL=' + encodeURIComponent(email) + '&LEADSOURCE=video-series&c=mcCallback';
         var script = document.createElement('script');
         script.src = url;
         document.body.appendChild(script);
