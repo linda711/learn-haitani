@@ -625,7 +625,7 @@
         <h1 class="series-title">Real AI, shown at the altitude you lead from.</h1>
         <p class="hero-subtitle">A short video series for Heads of K&ndash;12 private schools &mdash; each one a working demonstration of AI applied to the leadership work that actually sits on your desk: strategic plans, board prep, the decisions no one else can make.</p>
         <p class="hero-cta-label">Enter your email and I&rsquo;ll send each new video as it&rsquo;s released.</p>
-        <form class="email-form" action="https://haitani.us14.list-manage.com/subscribe/post?u=83710dd64d29b02cbc85113e6&amp;id=9691c6cf12&amp;f_id=0037b5e5f0&amp;redirect=https://haitani.org" method="post" novalidate>
+        <form id="mc-form-hero" class="email-form" action="https://haitani.us14.list-manage.com/subscribe/post-json?u=83710dd64d29b02cbc85113e6&amp;id=9691c6cf12&amp;f_id=0037b5e5f0" method="post" novalidate>
             <input type="email" name="EMAIL" placeholder="you@yourschool.org" aria-label="Email address" required>
             <button type="submit">Send me the series</button>
             <!-- MailChimp bot protection — do not remove -->
@@ -763,7 +763,7 @@
         <p>These videos are my way of showing you what&rsquo;s possible, at the altitude you lead from. I&rsquo;ll be making more of them through the spring.</p>
         <p class="cta-sub">If you&rsquo;d like them as they come out, leave your email below &mdash; I&rsquo;ll send each one directly.</p>
         <div class="cta-form-wrap">
-            <form class="email-form" action="https://haitani.us14.list-manage.com/subscribe/post?u=83710dd64d29b02cbc85113e6&amp;id=9691c6cf12&amp;f_id=0037b5e5f0&amp;redirect=https://haitani.org" method="post" novalidate>
+            <form id="mc-form-cta" class="email-form" action="https://haitani.us14.list-manage.com/subscribe/post-json?u=83710dd64d29b02cbc85113e6&amp;id=9691c6cf12&amp;f_id=0037b5e5f0" method="post" novalidate>
                 <input type="email" name="EMAIL" placeholder="you@yourschool.org" aria-label="Email address" required>
                 <button type="submit">Send me the series</button>
                     <!-- MailChimp bot protection — do not remove -->
@@ -792,6 +792,30 @@
     </div>
     <p class="footer-tagline">AI strategy for school leaders &middot; Linda Haitani</p>
 </footer>
+
+
+<script>
+// MailChimp JSONP — handles new subscribers, already-subscribed, and errors
+// Redirects to haitani.org in all cases so user never sees MailChimp's pages
+window.mcCallback = function(data) {
+    window.location.href = 'https://haitani.org';
+};
+
+function mcSubmit(formEl) {
+    formEl.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var email = this.querySelector('input[name="EMAIL"]').value;
+        if (!email) return;
+        var url = this.action + '&EMAIL=' + encodeURIComponent(email) + '&c=mcCallback';
+        var script = document.createElement('script');
+        script.src = url;
+        document.body.appendChild(script);
+    });
+}
+
+mcSubmit(document.getElementById('mc-form-hero'));
+mcSubmit(document.getElementById('mc-form-cta'));
+</script>
 
 </body>
 </html>
